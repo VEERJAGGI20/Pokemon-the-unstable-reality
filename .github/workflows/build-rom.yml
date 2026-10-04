@@ -1,0 +1,58 @@
+name: Build Pokémon The Unstable Reality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-firered:
+    name: Build FireRed ROM
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            binutils-arm-none-eabi \
+            gcc-arm-none-eabi \
+            libnewlib-arm-none-eabi \
+            libpng-dev \
+            python3
+
+      - name: Show toolchain versions
+        run: |
+          arm-none-eabi-gcc --version
+          arm-none-eabi-cpp --version
+          make --version
+
+      - name: Build FireRed
+        run: |
+          make firered -j$(nproc) -O
+
+      - name: Verify ROM
+        run: |
+          test -f pokefirered.gba
+          test -s pokefirered.gba
+          file pokefirered.gba
+          sha256sum pokefirered.gba
+
+      - name: Upload playable ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokemon-the-unstable-reality-firered
+          path: pokefirered.gba
+          if-no-files-found: error
+          retention-days: 30
