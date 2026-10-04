@@ -405,7 +405,6 @@ VermilionCity_EventScript_PutrWatcher::
 	end
 
 VermilionCity_Text_PutrWatcher::
-	.string "A shipment came through the harbor
-	and left before dawn.\p"
+    .string "A shipment came through the harbor and left before dawn.\p"
 	.string "The crates weren't marked with a
 	company name. Just a strange three-part symbol.$"
