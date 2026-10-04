@@ -38,6 +38,8 @@ jobs:
           arm-none-eabi-cpp --version
           make --version
 
+      - name: Build project tools
+        run: make tools -j$(nproc) -O
       - name: Build FireRed
         run: |
           make firered -j$(nproc) -O
