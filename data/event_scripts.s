@@ -796,6 +796,7 @@ gStdScripts_End::
 	.include "data/maps/PewterCity_Frlg/scripts.inc"
 	.include "data/maps/CeruleanCity_Frlg/scripts.inc"
 	.include "data/maps/LavenderTown_Frlg/scripts.inc"
+	.include "data/maps/LavenderTown_CultHQ_Frlg/scripts.inc"
 	.include "data/maps/VermilionCity_Frlg/scripts.inc"
 	.include "data/maps/CeladonCity_Frlg/scripts.inc"
 	.include "data/maps/FuchsiaCity_Frlg/scripts.inc"
