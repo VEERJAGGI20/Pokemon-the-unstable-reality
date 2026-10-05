@@ -113,7 +113,5 @@ Route10_EventScript_PutrWitness::
 	end
 
 Route10_Text_PutrWitness::
-	.string "You heading to LAVENDER?\p"
-	.string "Then keep your eyes open. I saw people
-	carrying equipment toward the town at
-	night. They didn't look like hikers.$"
+    .string "You heading to LAVENDER?\p"
+    .string "Then keep your eyes open. I saw people carrying equipment toward the town at night. They didn't look like hikers.$"

@@ -178,8 +178,5 @@ Route8_EventScript_PutrResearcher::
 	end
 
 Route8_Text_PutrResearcher::
-	.string "Don't let the quiet fool you.
-	Something has been moving artifacts
-	through this route.\p"
-	.string "The records all point toward LAVENDER.
-	I was told to stop asking questions.$"
+        .string "Don't let the quiet fool you. Something has been moving artifacts through this route.\p"
+        .string "The records all point toward LAVENDER. I was told to stop asking questions.$"
